@@ -199,7 +199,11 @@ function userBetSend() {
 		callValue: sun
 		//shouldPollResponse: true
 	}).then(function(r) {
-		setTimeout(function(){watchAllBet();},2000);
+		if(window.watchAllBetTimer){
+			clearTimeout(watchAllBetTimer);
+			watchAllBetTimer = null;
+		}
+		watchAllBetTimer = setTimeout(function(){watchAllBet();},4000);
 	    //console.log("userBet: "+JSON.stringify(r));
 	}).catch(function(e) {
 	    //console.log("userBet: "+e);
