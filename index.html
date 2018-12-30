@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Bingo game (DApp)</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+	<script src='js/bootstrap.min.js' type='text/javascript'></script>
+	<script src='dist/TronWeb.min.js' type='text/javascript'></script>
+	<script src='js/main.js' type='text/javascript'></script>
+</head>
+<body>
+<div class="header-contractaddress">
+	<div id="contractaddresslink"></div>
+    <img src="img/tron.png" />
+</div>
+<div id="app">
+    <div class="bet-number">Award rate for winners <span>1x70</span></div>
+    <div class="bet-number" style="padding-bottom:10px;">Bet number is <span id="bingo-bet-number" style="font-size:38px; color:#FF0;">?</span></div>
+    <div id="bingo-button-group"></div>
+    <div id="bingo-max-bet" style="padding-top:10px;"></div>
+    <div id="bingo-profit-win">Profit on win:</div>
+    <div class="center" style="padding-top:10px;" >Bet amount (TRX):</div>
+    <div class="center">
+        <input id="amount" style="text-align:center" class="form-control" placeholder="min 1 TRX" type="number" pattern="\d+(\.\d{2})?" required="required" oninput="amountChang()"/>
+    </div>
+    <div class="center" style="padding-top:10px;">
+        <button disabled="disabled" type="button" id="btn-bet" class="btn btn-success" onclick="userBetSend()" style="font-weight:bold;font-size:16px;"> &nbsp; Roll it &nbsp; </button>
+    </div>
+    
+	<div class="tronLink" id="tronLink-install">
+        <div class="info"><h1>TronLink Required</h1><p>To start you must install TronLink. TronLink is a TRON wallet for the browser. Once installed, return back and refresh the page.</p>
+        <p>You can be <a href="https://chrome.google.com/webstore/detail/ibnejdfjmmkpcnlpebklmnkoeoihofec/" target="_blank">installed from the Chrome Webstore</a>.</p>
+        <!--<p>You can download the Firefox Extension <a href="https://addons.mozilla.org/en-US/firefox/addon/tronlink" target="_blank">Here</a>.</p>-->
+        </div><div class="logo"><img src="img/TronLinkLogo.png" alt="TronLink logo"></div>
+    </div>
+	<div class="tronLink" id="tronLink-login">
+        <div class="info"><h1>Log in Required</h1><p>TronLink is installed but you must first log in. Open TronLink from the browser bar and set up your first wallet or decrypt a previously-created wallet.</p>
+        <!--<p>You can download the Firefox Extension <a href="https://addons.mozilla.org/en-US/firefox/addon/tronlink" target="_blank">Here</a>.</p>-->
+        </div><div class="logo"><img src="img/TronLinkLogo.png" alt="TronLink logo"></div>
+    </div>
+	
+    
+    <div>
+        <h2 style="padding:30px 0 0 0;">My bet session</h2>
+        <div id="recent-bets">
+            <!--<div class="message-bet">
+                <span class="owner">TNHpUuakVeceLagF9k6j8HU9KruSQ23cXW</span>
+                Bet number: <b>81</b>, Bet amount: <b>1 TRX</b>, Result number: <b>74</b>, Win amount: <b>0 TRX</b>
+             </div>-->
+        </div>
+        
+        <h2 style="padding:30px 0 0 0;">All bets</h2>
+        <div id="all-bets">
+            <!--<div class="message-bet">
+                <span class="owner">TNHpUuakVeceLagF9k6j8HU9KruSQ23cXW</span>
+                Bet number: <b>81</b>, Bet amount: <b>1 TRX</b>, Result number: <b>74</b>, Win amount: <b>0 TRX</b>
+            </div>-->
+        </div>
+        <div class="center" style="color:#000;">...</div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="mybetModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                	<h5 class="modal-title">Your bet results</h5>
+                </div>
+                <div class="modal-body" id="bet-modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <br />
+    <div style="display:none">
+        <div onclick="getRandomFactor()">getRandomFactor</div>
+        <div onclick="getTotalUserBets()">getTotalUserBets</div>
+        <div onclick="getTotalUserWin()">getTotalUserWin</div>
+        <div onclick="getGameMaxBet()">getGameMaxBet</div>
+        <div onclick="getGameMinBet()">getGameMinBet</div>
+        <div onclick="getProfitWinRate()">getProfitWinRate</div>
+        <div onclick="getCurrentBet()">getCurrentBet</div>
+        <div>Bet id: <input id="betid" type="number" style="color:#000" /></div>
+        <div onclick="getBetData()">Get Bet</div>
+    </div>
+</div>
+
+</body>
+</html>

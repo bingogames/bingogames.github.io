@@ -1,0 +1,43 @@
+body{background: url(../img/bg.png) top center no-repeat #0b6fa5; min-width:670px; color:#fff; font-size:18px;}
+#app{padding: 100px 20px 20px 20px;}
+.btn-bingo{margin:0 5px 5px 0;}
+.bet-number{text-align:center;font-size:30px;};
+#bingo-bet-number{font-size:38px; color:#FF0;}
+.header-contractaddress{font-size:13px; padding:1px 3px;}
+.header-contractaddress a{color:#036;}
+.center{text-align:center;}
+.btn{color:#333;}
+.modal{color:#000}
+.modal-title{font-size:20px;}
+.message-bet{
+    background: #459bc1;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.08);
+    margin-bottom: 5px;
+    padding: 8px 15px;
+    word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .2s ease;
+	font-size:15px;
+	color:#000;
+}
+.message-bet .owner {
+    font-size: 16px;
+    font-weight: 500;
+}
+.tronLink {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.08);
+    padding: 30px;
+    margin: 20px 10px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+	font-size:15px;
+	color:#000;
+}
+.tronLink .info {flex: 1 1;}
+.tronLink .logo {margin-left: 30px;}
+.tronLink h1{font-size:30px; margin-top:-10px;}
